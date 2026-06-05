@@ -86,11 +86,16 @@ jobs:
 
       - name: Debug Token
         run:  |
-          if [ -z "$TOKEN" ]; then
-           echo "Token is empty"
-          else
-            echo "Token length: ${#TOKEN}"
-          fi
+          echo "Direct length: ${#DIRECT}"
+          echo "Env length: ${#TOKEN}"
+        env:
+          TOKEN: ${{ secrets.MODULES_GITHUB_TOKEN }}
+          DIRECT: ${{ secrets.MODULES_GITHUB_TOKEN }}
+        
+      - name: Debug All Secrets
+        run: |
+          echo "AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}"
+          echo "MODULES_GITHUB_TOKEN: ${MODULES_GITHUB_TOKEN}"
 
       - name: Azure Login
         uses: azure/login@v2
