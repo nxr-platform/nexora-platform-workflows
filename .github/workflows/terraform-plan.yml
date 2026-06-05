@@ -47,15 +47,16 @@ on:
         description: "Name of the uploaded plan artifact"
         value: ${{ jobs.plan.outputs.artifact-name }}
 
-jobs:
-  plan:
-    name: "Plan — ${{ inputs.layer_name }}"
-    runs-on: ubuntu-latest
-    permissions:
+permissions:
       id-token: write
       contents: read
       pull-requests: write
       security-events: write
+
+jobs:
+  plan:
+    name: "Plan — ${{ inputs.layer_name }}"
+    runs-on: ubuntu-latest
 
     outputs:
       artifact-name: ${{ steps.set-artifact-name.outputs.name }}

@@ -39,13 +39,14 @@ on:
       MODULES_GITHUB_TOKEN:
         required: true
 
+permissions:
+      id-token: write
+      contents: read
+
 jobs:
   apply:
     name: "Apply — ${{ inputs.environment }}"
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
 
     env:
       TF_VAR_environment: ${{ inputs.environment }}
