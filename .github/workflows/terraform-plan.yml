@@ -84,6 +84,14 @@ jobs:
         id: fmt
         run: terraform fmt -check -recursive
 
+      - name: Debug Token
+        run:  |
+          if [ -z "$TOKEN" ]; then
+           echo "Token is empty"
+          else
+            echo "Token length: ${#TOKEN}"
+          fi
+
       - name: Azure Login
         uses: azure/login@v2
         with:
