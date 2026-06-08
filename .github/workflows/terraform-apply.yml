@@ -23,6 +23,11 @@ on:
         description: "Terraform version"
         type: string
         default: "1.15.2"
+      layer_name:
+        description: "Human readable name for the job"
+        type: string
+        required: false
+        default: "Apply"
     secrets:
       AZURE_CLIENT_ID:
         required: true
