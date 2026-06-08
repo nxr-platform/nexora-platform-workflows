@@ -26,8 +26,7 @@ on:
       layer_name:
         description: "Human readable name for the job"
         type: string
-        required: false
-        default: "Apply"
+        required: true
     secrets:
       AZURE_CLIENT_ID:
         required: true
