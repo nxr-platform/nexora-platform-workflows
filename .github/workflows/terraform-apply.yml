@@ -49,7 +49,7 @@ permissions:
 
 jobs:
   apply:
-    name: "Apply — ${{ inputs.environment }}"
+    name: ${{ inputs.layer_name }}
     runs-on: ubuntu-latest
 
     env:
